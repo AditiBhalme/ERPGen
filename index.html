@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TGPCET ERP - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- ========================================= -->
+        <!-- LEFT INFORMATION SECTION -->
+        <!-- ========================================= -->
+
+        <div class="login-info">
+
+            <div class="college-logo">
+                🎓
+            </div>
+
+            <h1>TGPCET ERP</h1>
+
+            <h2>Generative AI ERP Framework</h2>
+
+            <p>
+                Conversational ERP Querying and Dynamic Dashboard Generation
+            </p>
+
+            <div class="feature-list">
+
+                <!-- Feature 1 -->
+                <div class="feature">
+
+                    <span>🤖</span>
+
+                    <div>
+                        <strong>AI Powered</strong>
+
+                        <p>
+                            Ask ERP questions using natural language.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Feature 2 -->
+                <div class="feature">
+
+                    <span>📊</span>
+
+                    <div>
+                        <strong>Dynamic Dashboard</strong>
+
+                        <p>
+                            Generate charts, tables and reports dynamically.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Feature 3 -->
+                <div class="feature">
+
+                    <span>🔐</span>
+
+                    <div>
+                        <strong>Role Based Access</strong>
+
+                        <p>
+                            Different access for students, faculty and admins.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- LOGIN SECTION -->
+        <!-- ========================================= -->
+
+        <div class="login-container">
+
+            <div class="login-card">
+
+                <!-- Login Header -->
+                <div class="login-header">
+
+                    <div class="login-icon">
+                        🔐
+                    </div>
+
+                    <h2>Welcome Back</h2>
+
+                    <p>
+                        Login to TGPCET ERP System
+                    </p>
+
+                </div>
+
+
+                <!-- ========================================= -->
+                <!-- LOGIN FORM -->
+                <!-- ========================================= -->
+
+                <form id="loginForm">
+
+
+                    <!-- Username -->
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Role -->
+                    <div class="form-group">
+
+                        <label for="role">
+                            Login As
+                        </label>
+
+                        <select
+                            id="role"
+                            name="role"
+                            required
+                        >
+
+                            <option value="">
+                                Select your role
+                            </option>
+
+                            <option value="student">
+                                Student
+                            </option>
+
+                            <option value="faculty">
+                                Faculty
+                            </option>
+
+                            <option value="admin">
+                                Administrator
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ========================================= -->
+                    <!-- LOGIN BUTTON -->
+                    <!-- ========================================= -->
+
+                    <button
+                        type="submit"
+                        id="loginButton"
+                        class="login-button"
+                    >
+                        Login
+                    </button>
+
+
+                    <!-- ========================================= -->
+                    <!-- LOGIN MESSAGE -->
+                    <!-- ========================================= -->
+
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                    ></div>
+
+
+                </form>
+
+
+                <!-- ========================================= -->
+                <!-- DEMO LOGIN INFORMATION -->
+                <!-- ========================================= -->
+
+                <div class="demo-info">
+
+                    <h4>Development Login</h4>
+
+                    <p>
+                        Use the demo accounts created in MongoDB.
+                    </p>
+
+                    <div class="demo-accounts">
+
+                        <p>
+                            👨‍💼 <strong>Admin:</strong>
+                            admin / 1234
+                        </p>
+
+                        <p>
+                            👩‍🏫 <strong>Faculty:</strong>
+                            faculty1 / 1234
+                        </p>
+
+                        <p>
+                            👨‍🎓 <strong>Student:</strong>
+                            student1 / 1234
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- LOGIN JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Faculty Dashboard - TGPCET ERP</title>
+
+    <link
+        rel="stylesheet"
+        href="./faculty-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo-section">
+
+            <div class="logo-icon">
+                🎓
+            </div>
+
+            <div>
+                <h2>TGPCET ERP</h2>
+                <p>Faculty Portal</p>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item active"
+                data-section="overviewSection"
+            >
+                📊
+                <span>Overview</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="studentsSection"
+            >
+                👥
+                <span>Students</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="attendanceSection"
+            >
+                📅
+                <span>Attendance</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="performanceSection"
+            >
+                🎯
+                <span>Performance</span>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-section="eligibilitySection"
+            >
+                ✅
+                <span>Exam Eligibility</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                id="logoutBtn"
+                class="logout-button"
+            >
+                🚪 Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <h1>Faculty Dashboard</h1>
+
+                <p>
+                    Monitor student academic and attendance information
+                </p>
+
+            </div>
+
+
+            <div class="user-area">
+
+                <div class="user-avatar">
+                    👩‍🏫
+                </div>
+
+                <div>
+
+                    <strong id="loggedInUser">
+                        Faculty
+                    </strong>
+
+                    <span>
+                        Faculty
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==========================================
+             OVERVIEW
+        =========================================== -->
+
+        <section
+            id="overviewSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>Dashboard Overview</h2>
+
+                    <p>
+                        Summary of the available student ERP data
+                    </p>
+
+                </div>
+
+                <button
+                    id="refreshBtn"
+                    class="refresh-button"
+                >
+                    🔄 Refresh
+                </button>
+
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <span>Total Students</span>
+
+                        <strong id="totalStudents">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <span>Male Students</span>
+
+                        <strong id="maleStudents">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👩‍🎓
+                    </div>
+
+                    <div>
+
+                        <span>Female Students</span>
+
+                        <strong id="femaleStudents">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <span>Average CGPA</span>
+
+                        <strong id="averageCGPA">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SECOND STATS -->
+
+            <div class="secondary-stats">
+
+                <div class="mini-card">
+
+                    <span>Exam Eligible</span>
+
+                    <strong id="eligibleStudents">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="mini-card">
+
+                    <span>Not Eligible</span>
+
+                    <strong id="notEligibleStudents">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="mini-card">
+
+                    <span>Passing Grade</span>
+
+                    <strong id="passingStudents">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="mini-card">
+
+                    <span>Failing Grade</span>
+
+                    <strong id="failingStudents">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             STUDENTS
+        =========================================== -->
+
+        <section
+            id="studentsSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>Student Records</h2>
+
+                    <p>
+                        Search and filter student information
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="filter-box">
+
+                <div class="filter-group">
+
+                    <label for="studentSearch">
+                        Search
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentSearch"
+                        placeholder="Search by name or RRN..."
+                    >
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="departmentFilter">
+                        Department
+                    </label>
+
+                    <select id="departmentFilter">
+
+                        <option value="">
+                            All Departments
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="genderFilter">
+                        Gender
+                    </label>
+
+                    <select id="genderFilter">
+
+                        <option value="">
+                            All
+                        </option>
+
+                        <option value="MALE">
+                            Male
+                        </option>
+
+                        <option value="FEMALE">
+                            Female
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="gradeFilter">
+                        Grade
+                    </label>
+
+                    <select id="gradeFilter">
+
+                        <option value="">
+                            All Grades
+                        </option>
+
+                        <option value="P">
+                            P
+                        </option>
+
+                        <option value="F">
+                            F
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div class="table-container">
+
+                <div class="table-header">
+
+                    <div>
+
+                        <strong>
+                            Student List
+                        </strong>
+
+                        <span id="studentCount">
+                            0 students
+                        </span>
+
+                    </div>
+
+                    <button
+                        id="downloadExcelBtn"
+                        class="export-button"
+                    >
+                        📊 Export Excel
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Name</th>
+
+                                <th>RRN</th>
+
+                                <th>Department</th>
+
+                                <th>Gender</th>
+
+                                <th>CGPA</th>
+
+                                <th>Grade</th>
+
+                                <th>Attendance</th>
+
+                                <th>Exam</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="studentTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="9"
+                                    class="loading-cell"
+                                >
+                                    Loading students...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             ATTENDANCE
+        =========================================== -->
+
+        <section
+            id="attendanceSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>📅 Attendance Overview</h2>
+
+                    <p>
+                        Attendance statistics for students
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="attendance-overview">
+
+                <div class="attendance-stat">
+
+                    <span>Average Attendance</span>
+
+                    <strong id="averageAttendance">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="attendance-stat">
+
+                    <span>Above 75%</span>
+
+                    <strong id="above75">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="attendance-stat">
+
+                    <span>Below 75%</span>
+
+                    <strong id="below75">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="attendance-message">
+
+                <span>ℹ️</span>
+
+                <p>
+                    Students below 75% attendance may require
+                    academic attention according to institutional rules.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             PERFORMANCE
+        =========================================== -->
+
+        <section
+            id="performanceSection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>🎯 Academic Performance</h2>
+
+                    <p>
+                        CGPA and grade distribution
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="performance-grid">
+
+                <div class="performance-card">
+
+                    <span>
+                        Highest CGPA
+                    </span>
+
+                    <strong id="highestCGPA">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <span>
+                        Lowest CGPA
+                    </span>
+
+                    <strong id="lowestCGPA">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <span>
+                        Students with CGPA ≥ 8
+                    </span>
+
+                    <strong id="highCGPAStudents">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <span>
+                        Students with CGPA &lt; 6
+                    </span>
+
+                    <strong id="lowCGPAStudents">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             ELIGIBILITY
+        =========================================== -->
+
+        <section
+            id="eligibilitySection"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>✅ Examination Eligibility</h2>
+
+                    <p>
+                        Examination eligibility summary
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="eligibility-overview">
+
+                <div class="eligibility-box eligible">
+
+                    <div class="eligibility-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>Eligible Students</span>
+
+                        <strong id="eligibleBox">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="eligibility-box not-eligible">
+
+                    <div class="eligibility-icon">
+                        ✕
+                    </div>
+
+                    <div>
+
+                        <span>Not Eligible Students</span>
+
+                        <strong id="notEligibleBox">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             MESSAGE
+        =========================================== -->
+
+        <div
+            id="dashboardMessage"
+            class="dashboard-message"
+        ></div>
+
+
+    </main>
+
+
+   <script src="auth.js"></script>
+<script src="faculty-dashboard.js"></script>
+
+</body>
+
+</html>

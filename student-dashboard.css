@@ -1,0 +1,899 @@
+/* ============================================================
+   TGPCET ERP - STUDENT DASHBOARD
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #f4f7fb;
+
+    color:
+        #172554;
+
+    min-height:
+        100vh;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.top-header {
+
+    background:
+        #ffffff;
+
+    border-top:
+        5px solid #172554;
+
+    border-bottom:
+        1px solid #e2e8f0;
+
+    padding:
+        28px 5%;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+
+}
+
+
+.header-content {
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+}
+
+
+.header-title h1 {
+
+    font-size:
+        32px;
+
+    font-weight:
+        700;
+
+    color:
+        #172554;
+
+    margin-bottom:
+        6px;
+
+}
+
+
+.header-title p {
+
+    font-size:
+        16px;
+
+    color:
+        #64748b;
+
+}
+
+
+/* ============================================================
+   USER
+   ============================================================ */
+
+.user-info {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+
+.user-icon {
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    border-radius:
+        50%;
+
+    background:
+        #e7efff;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        25px;
+
+}
+
+
+.user-text {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+}
+
+
+.user-text strong {
+
+    color:
+        #172554;
+
+    font-size:
+        15px;
+
+}
+
+
+.user-text span {
+
+    color:
+        #64748b;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+.student-container {
+
+    width:
+        92%;
+
+    max-width:
+        1200px;
+
+    margin:
+        30px auto 60px;
+
+}
+
+
+/* ============================================================
+   SEARCH CARD
+   ============================================================ */
+
+.search-card {
+
+    background:
+        #ffffff;
+
+    border-radius:
+        16px;
+
+    padding:
+        30px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.08);
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.section-heading h2 {
+
+    color:
+        #172554;
+
+    font-size:
+        23px;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.section-heading p {
+
+    color:
+        #64748b;
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.rrn-form {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+
+}
+
+
+.rrn-form input {
+
+    flex:
+        1;
+
+    height:
+        50px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius:
+        10px;
+
+    padding:
+        0 16px;
+
+    font-size:
+        15px;
+
+    color:
+        #172554;
+
+    background:
+        #f8fafc;
+
+    outline:
+        none;
+
+}
+
+
+.rrn-form input:focus {
+
+    border-color:
+        #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+
+}
+
+
+.rrn-form button {
+
+    height:
+        50px;
+
+    border:
+        none;
+
+    border-radius:
+        10px;
+
+    padding:
+        0 24px;
+
+    background:
+        #2563eb;
+
+    color:
+        #ffffff;
+
+    font-size:
+        15px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s;
+
+}
+
+
+.rrn-form button:hover {
+
+    background:
+        #1d4ed8;
+
+}
+
+
+.rrn-form button:disabled {
+
+    opacity:
+        0.7;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+/* ============================================================
+   WELCOME CARD
+   ============================================================ */
+
+.welcome-card {
+
+    background:
+        #ffffff;
+
+    border-radius:
+        16px;
+
+    padding:
+        80px 30px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.08);
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.welcome-icon {
+
+    font-size:
+        58px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.welcome-card h2 {
+
+    color:
+        #172554;
+
+    font-size:
+        26px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.welcome-card p {
+
+    color:
+        #64748b;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.6;
+
+    max-width:
+        650px;
+
+    margin:
+        auto;
+
+}
+
+
+/* ============================================================
+   STUDENT DETAILS
+   ============================================================ */
+
+.student-details {
+
+    display:
+        none;
+
+}
+
+
+.details-card {
+
+    background:
+        #ffffff;
+
+    border-radius:
+        16px;
+
+    padding:
+        28px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.08);
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.card-header {
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.card-header h2 {
+
+    color:
+        #172554;
+
+    font-size:
+        21px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.card-header p {
+
+    color:
+        #64748b;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ============================================================
+   DETAILS GRID
+   ============================================================ */
+
+.details-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        16px;
+
+}
+
+
+.detail-item {
+
+    background:
+        #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        12px;
+
+    padding:
+        18px;
+
+}
+
+
+.detail-item span {
+
+    display:
+        block;
+
+    color:
+        #64748b;
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.detail-item strong {
+
+    color:
+        #172554;
+
+    font-size:
+        16px;
+
+}
+
+
+/* ============================================================
+   STATISTICS
+   ============================================================ */
+
+.stats-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.stat-card {
+
+    background:
+        #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        12px;
+
+    padding:
+        24px;
+
+    text-align:
+        center;
+
+}
+
+
+.stat-card span {
+
+    display:
+        block;
+
+    color:
+        #64748b;
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.stat-card strong {
+
+    display:
+        block;
+
+    color:
+        #172554;
+
+    font-size:
+        27px;
+
+}
+
+
+/* ============================================================
+   STATUS
+   ============================================================ */
+
+.status {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-top:
+        20px;
+
+    padding:
+        12px 20px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        600;
+
+}
+
+
+.status.success {
+
+    background:
+        #dcfce7;
+
+    color:
+        #166534;
+
+}
+
+
+.status.warning {
+
+    background:
+        #fef3c7;
+
+    color:
+        #92400e;
+
+}
+
+
+.status.danger {
+
+    background:
+        #fee2e2;
+
+    color:
+        #991b1b;
+
+}
+
+
+.status.neutral {
+
+    background:
+        #f1f5f9;
+
+    color:
+        #475569;
+
+}
+
+
+/* ============================================================
+   RESULT MESSAGE
+   ============================================================ */
+
+.result-message {
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.error-message {
+
+    background:
+        #fee2e2;
+
+    border:
+        1px solid #fecaca;
+
+    color:
+        #991b1b;
+
+    border-radius:
+        12px;
+
+    padding:
+        16px;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ============================================================
+   LOGOUT
+   ============================================================ */
+
+.logout-area {
+
+    text-align:
+        center;
+
+    margin-top:
+        10px;
+
+}
+
+
+.logout-button {
+
+    border:
+        none;
+
+    background:
+        #dc2626;
+
+    color:
+        #ffffff;
+
+    border-radius:
+        10px;
+
+    padding:
+        13px 35px;
+
+    font-size:
+        15px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+}
+
+
+.logout-button:hover {
+
+    background:
+        #b91c1c;
+
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (
+    max-width: 768px
+) {
+
+    .header-content {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .user-info {
+
+        align-self:
+            flex-start;
+
+    }
+
+
+    .rrn-form {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rrn-form button {
+
+        width:
+            100%;
+
+    }
+
+
+    .details-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .student-container {
+
+        width:
+            94%;
+
+    }
+
+
+    .header-title h1 {
+
+        font-size:
+            27px;
+
+    }
+
+}
+
+
+@media (
+    max-width: 480px
+) {
+
+    .search-card,
+    .details-card,
+    .welcome-card {
+
+        padding:
+            20px;
+
+    }
+
+
+    .welcome-card {
+
+        padding-top:
+            50px;
+
+        padding-bottom:
+            50px;
+
+    }
+
+}

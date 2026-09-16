@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TGPCET ERP Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         TOP HEADER
+    ====================================================== -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                T
+            </div>
+
+            <div class="brand-name">
+                TGPCET ERP PORTAL
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <span>
+                Welcome,
+                <b id="welcomeUser">Admin</b>
+            </span>
+
+            <button
+                id="logoutBtn"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN LAYOUT
+    ====================================================== -->
+
+    <div class="main-layout">
+
+
+        <!-- =================================================
+             LEFT SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="menu-title">
+                ERP MENU
+            </div>
+
+
+            <!-- HOME -->
+
+            <div
+                class="menu-item active"
+                id="homeMenu"
+            >
+
+                <span class="menu-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Home
+                </span>
+
+            </div>
+
+
+            <!-- ACADEMIC -->
+
+            <div class="menu-section">
+
+                <div
+                    class="menu-item section-title"
+                    onclick="toggleMenu('academicMenu')"
+                >
+
+                    <span class="menu-icon">
+                        📚
+                    </span>
+
+                    <span>
+                        Academic
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="submenu"
+                    id="academicMenu"
+                >
+
+                    <div>
+                        Student Related
+                    </div>
+
+                    <div>
+                        Student Complete Details
+                    </div>
+
+                    <div>
+                        Document Upload
+                    </div>
+
+                    <div>
+                        Student Fees Details
+                    </div>
+
+                    <div>
+                        Even Semester Admission Form
+                    </div>
+
+                    <div>
+                        Admission Form
+                    </div>
+
+                    <div>
+                        Activities
+                    </div>
+
+                    <div>
+                        Insurance Form
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIGURATION -->
+
+            <div class="menu-section">
+
+                <div
+                    class="menu-item section-title"
+                    onclick="toggleMenu('configurationMenu')"
+                >
+
+                    <span class="menu-icon">
+                        ⚙️
+                    </span>
+
+                    <span>
+                        Configuration
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="submenu"
+                    id="configurationMenu"
+                >
+
+                    <div>
+                        Departments
+                    </div>
+
+                    <div>
+                        Degree / Courses
+                    </div>
+
+                    <div>
+                        Branches
+                    </div>
+
+                    <div>
+                        Academic Year
+                    </div>
+
+                    <div>
+                        Semester
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- T&P -->
+
+            <div class="menu-item">
+
+                <span class="menu-icon">
+                    📊
+                </span>
+
+                <span>
+                    T&P Dashboard
+                </span>
+
+            </div>
+
+
+            <!-- USER MANAGEMENT -->
+
+            <div class="menu-section">
+
+                <div
+                    class="menu-item section-title"
+                    onclick="toggleMenu('userMenu')"
+                >
+
+                    <span class="menu-icon">
+                        👤
+                    </span>
+
+                    <span>
+                        User Management
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="submenu"
+                    id="userMenu"
+                >
+
+                    <div>
+                        New User
+                    </div>
+
+                    <div>
+                        Search User
+                    </div>
+
+                    <div>
+                        Student Users
+                    </div>
+
+                    <div>
+                        Faculty Users
+                    </div>
+
+                    <div>
+                        Admin Users
+                    </div>
+
+                    <div>
+                        Role Management
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXAM MANAGEMENT -->
+
+            <div class="menu-section">
+
+                <div
+                    class="menu-item section-title"
+                    onclick="toggleMenu('examMenu')"
+                >
+
+                    <span class="menu-icon">
+                        📝
+                    </span>
+
+                    <span>
+                        Exam Management
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="submenu"
+                    id="examMenu"
+                >
+
+                    <div>
+                        Exam Details
+                    </div>
+
+                    <div>
+                        Exam Schedule
+                    </div>
+
+                    <div>
+                        Exam Registration
+                    </div>
+
+                    <div>
+                        Marks Entry
+                    </div>
+
+                    <div>
+                        Results
+                    </div>
+
+                    <div>
+                        Exam Reports
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REPORTS -->
+
+            <div class="menu-section">
+
+                <div
+                    class="menu-item section-title"
+                    onclick="toggleMenu('reportsMenu')"
+                >
+
+                    <span class="menu-icon">
+                        📄
+                    </span>
+
+                    <span>
+                        Reports
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="submenu"
+                    id="reportsMenu"
+                >
+
+                    <div>
+                        Student Reports
+                    </div>
+
+                    <div>
+                        Faculty Reports
+                    </div>
+
+                    <div>
+                        Attendance Reports
+                    </div>
+
+                    <div>
+                        Academic Reports
+                    </div>
+
+                    <div>
+                        Examination Reports
+                    </div>
+
+                    <div>
+                        Department Reports
+                    </div>
+
+                    <div>
+                        Placement Reports
+                    </div>
+
+                    <div>
+                        Student Report Generator
+                    </div>
+
+                    <div>
+                        Export / Download Reports
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI QUERY -->
+
+            <div
+                class="menu-item ai-menu"
+                onclick="focusAI()"
+            >
+
+                <span class="menu-icon">
+                    ✦
+                </span>
+
+                <span>
+                    AI ERP Query
+                </span>
+
+            </div>
+
+
+            <!-- ONLINE FEES -->
+
+            <div class="menu-section">
+
+                <div
+                    class="menu-item section-title"
+                    onclick="toggleMenu('feesMenu')"
+                >
+
+                    <span class="menu-icon">
+                        💳
+                    </span>
+
+                    <span>
+                        Online Fees Payment
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="submenu"
+                    id="feesMenu"
+                >
+
+                    <div>
+                        Other Fees
+                    </div>
+
+                    <div>
+                        College Fees
+                    </div>
+
+                    <div>
+                        Dress Fees
+                    </div>
+
+                    <div>
+                        Enrollment Fees
+                    </div>
+
+                    <div>
+                        Alumni Fees
+                    </div>
+
+                    <div>
+                        Scholarship Fee
+                    </div>
+
+                    <div>
+                        Emigration Fee
+                    </div>
+
+                    <div>
+                        Bus Fees
+                    </div>
+
+                    <div>
+                        Hostel Fees
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXAM FEES -->
+
+            <div class="menu-section">
+
+                <div
+                    class="menu-item section-title"
+                    onclick="toggleMenu('examFeesMenu')"
+                >
+
+                    <span class="menu-icon">
+                        💰
+                    </span>
+
+                    <span>
+                        Exam Fees Payment
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="submenu"
+                    id="examFeesMenu"
+                >
+
+                    <div>
+                        Regular Exam Registration
+                    </div>
+
+                    <div>
+                        Examination Details
+                    </div>
+
+                    <div>
+                        Result
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRAINING & PLACEMENTS -->
+
+            <div class="menu-section">
+
+                <div
+                    class="menu-item section-title"
+                    onclick="toggleMenu('placementMenu')"
+                >
+
+                    <span class="menu-icon">
+                        💼
+                    </span>
+
+                    <span>
+                        Training & Placements
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="submenu"
+                    id="placementMenu"
+                >
+
+                    <div>
+                        Upload Resume
+                    </div>
+
+                    <div>
+                        Drive Details
+                    </div>
+
+                    <div>
+                        Event Details
+                    </div>
+
+                    <div>
+                        My Placements
+                    </div>
+
+                    <div>
+                        Off Campus Placements Registration
+                    </div>
+
+                    <div>
+                        Career Registration
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="content">
+
+
+            <!-- PAGE HEADING -->
+
+            <section class="page-heading">
+
+                <h1>
+                    ERP Dashboard
+                </h1>
+
+                <p>
+                    Welcome to TGPCET ERP Portal
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 AI QUERY SECTION
+            ================================================== -->
+
+            <section
+                class="ai-card"
+                id="aiQuerySection"
+            >
+
+                <div class="ai-heading">
+
+                    <div class="ai-icon">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Conversational ERP Query
+                        </h2>
+
+                        <p>
+                            Ask anything about student or ERP data
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="query-row">
+
+                    <input
+                        type="text"
+                        id="queryInput"
+                        placeholder="Example: Show Information Technology students"
+                    >
+
+                    <button
+                        id="searchBtn"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+
+                <!-- QUICK PROMPTS -->
+
+                <div class="quick-prompts">
+
+                    <button
+                        type="button"
+                        onclick="setQuery('How many students are there?')"
+                    >
+                        Student Count
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setQuery('Show female students')"
+                    >
+                        Female Students
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setQuery('Show male students')"
+                    >
+                        Male Students
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setQuery('Show Information Technology students')"
+                    >
+                        IT Students
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setQuery('Show students below 75% attendance')"
+                    >
+                        Low Attendance
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setQuery('Find student with RRN TBIT23001')"
+                    >
+                        Search Student
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setQuery('Show students with CGPA 9')"
+                    >
+                        CGPA 9
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setQuery('Show exam eligible students')"
+                    >
+                        Exam Eligible
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="setQuery('Show Grade P students')"
+                    >
+                        Grade P
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+
+            <!-- =================================================
+                 QUERY HISTORY
+            ================================================== -->
+
+            <section class="query-history-section" id="queryHistorySection">
+
+                <div class="query-history-header">
+
+                    <div>
+                        <h2>Recent Queries</h2>
+                        <p>Quickly reopen and run your previous ERP questions</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="clearHistoryBtn"
+                        class="clear-history-button"
+                    >
+                        Clear History
+                    </button>
+
+                </div>
+
+                <div
+                    id="queryHistoryList"
+                    class="query-history-list"
+                >
+
+                    <div class="query-history-empty">
+                        <div>🕘</div>
+                        <p>No recent queries yet.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STATISTICS CARDS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+
+                <!-- TOTAL STUDENTS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Students
+                        </p>
+
+                        <h2 id="studentCount">
+                            --
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FEMALE -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👩‍🎓
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Female Students
+                        </p>
+
+                        <h2 id="femaleStudentCount">
+                            --
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MALE -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Male Students
+                        </p>
+
+                        <h2 id="maleStudentCount">
+                            --
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DEPARTMENTS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🏫
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Departments
+                        </p>
+
+                        <h2 id="departmentCount">
+                            --
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 GLOBAL DASHBOARD CHARTS
+            ================================================== -->
+
+            <section class="charts-section">
+
+
+                <!-- DEPARTMENT CHART -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+
+                            <h2>
+                                Department-wise Students
+                            </h2>
+
+                            <p>
+                                Number of students in each department
+                            </p>
+
+                        </div>
+
+                        <span class="chart-badge">
+                            Live Data
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="departmentChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GENDER CHART -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+
+                            <h2>
+                                Gender Distribution
+                            </h2>
+
+                            <p>
+                                Male and female student distribution
+                            </p>
+
+                        </div>
+
+                        <span class="chart-badge">
+                            Live Data
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="genderChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EXAM ELIGIBILITY -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+
+                            <h2>
+                                Exam Eligibility
+                            </h2>
+
+                            <p>
+                                Eligible and not eligible students
+                            </p>
+
+                        </div>
+
+                        <span class="chart-badge">
+                            Live Data
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="eligibilityChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CGPA -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+
+                            <h2>
+                                CGPA Distribution
+                            </h2>
+
+                            <p>
+                                Number of students by CGPA
+                            </p>
+
+                        </div>
+
+                        <span class="chart-badge">
+                            Live Data
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas
+                            id="cgpaChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 DYNAMIC QUERY VISUALIZATION
+            ================================================== -->
+
+            <section
+                class="dynamic-query-section"
+                id="dynamicQuerySection"
+            >
+
+
+                <!-- HEADER -->
+
+                <div class="dynamic-query-header">
+
+                    <div>
+
+                        <div class="dynamic-title-row">
+
+                            <div class="dynamic-ai-icon">
+                                ✦
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    Dynamic Query Dashboard
+                                </h2>
+
+                                <p>
+                                    AI-generated visualization based on your query
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <span
+                        class="dynamic-badge"
+                        id="dynamicQueryBadge"
+                    >
+                        Waiting for Query
+                    </span>
+
+                </div>
+
+
+
+                <!-- QUERY SUMMARY -->
+
+                <div
+                    class="dynamic-query-summary"
+                    id="dynamicQuerySummary"
+                >
+
+                    <div class="dynamic-summary-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Query
+                        </span>
+
+                        <strong id="dynamicQueryText">
+                            Ask a question to generate a dynamic dashboard
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DYNAMIC STATISTICS -->
+
+                <div
+                    class="dynamic-stats"
+                    id="dynamicQueryStats"
+                >
+
+                    <div class="dynamic-stat-box">
+
+                        <span>
+                            Matching Students
+                        </span>
+
+                        <strong id="dynamicStudentCount">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dynamic-stat-box">
+
+                        <span>
+                            Average CGPA
+                        </span>
+
+                        <strong id="dynamicAverageCGPA">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dynamic-stat-box">
+
+                        <span>
+                            Department
+                        </span>
+
+                        <strong id="dynamicDepartment">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DYNAMIC CHART -->
+
+                <div class="dynamic-chart-card">
+
+                    <div class="dynamic-chart-heading">
+
+                        <div>
+
+                            <h3 id="dynamicChartTitle">
+                                Query Visualization
+                            </h3>
+
+                            <p id="dynamicChartDescription">
+                                Your AI-generated chart will appear here
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dynamic-chart-container">
+
+                        <canvas
+                            id="dynamicQueryChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DYNAMIC TABLE -->
+
+                <div
+                    class="dynamic-table-wrapper"
+                    id="dynamicTableWrapper"
+                >
+
+                    <div class="dynamic-table-header">
+
+                        <h3>
+                            Query Data
+                        </h3>
+
+                        <span id="dynamicTableCount">
+                            0 records
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="dynamicQueryTable"
+                        class="dynamic-query-table-container"
+                    >
+
+                        <div class="dynamic-empty">
+
+                            <div>
+                                📋
+                            </div>
+
+                            <p>
+                                Dynamic query results will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUERY RESULT
+            ================================================== -->
+
+            <section class="result-card">
+
+                <div class="result-header">
+
+                    <div>
+
+                        <h2>
+                            Query Result
+                        </h2>
+
+                        <p>
+                            AI-generated ERP information
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="resultStatus"
+                    >
+                    </span>
+
+                </div>
+
+                <div class="report-buttons" id="reportButtons" style="display: none;">
+
+                    <button
+                     type="button"
+                     id="downloadExcelBtn"
+                     class="report-button excel-button">
+                     📊 Download Excel
+                    </button>
+
+                    <button
+                     type="button"
+                     id="downloadPDFBtn"
+                     class="report-button pdf-button">
+                     📄 Download PDF
+                    </button>
+
+                </div>
+
+                <div id="queryResult">
+
+                    <div class="empty-result">
+
+                        <div class="empty-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Ask the ERP AI Assistant
+                        </h3>
+
+                        <p>
+                            Your AI-generated ERP results
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+<!-- =====================================================
+     CHART.JS
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- =====================================================
+     AUTHENTICATION
+====================================================== -->
+
+<script src="auth.js"></script>
+
+<!-- =====================================================
+     DASHBOARD JAVASCRIPT
+====================================================== -->
+
+<script src="dashboard.js"></script>
+
+
+</body>
+
+</html>
